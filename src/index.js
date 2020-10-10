@@ -22,7 +22,9 @@ const App = () => {
         [0,4,8],
         [2,4,6]
     ];
-    const [boardClass, setboardClass] = useState(board);
+    const boardX = `${board} ${X_Class}`
+    const boardCircle = `${board} ${circle_Class}`
+    const [boardClass, setboardClass] = useState(classTrun ? boardCircle : boardX);
     const [cellElements, setCellElements] = useState([...new Array(9).fill(Math.random())]);
     const [end,setend]=useState(false);
     const [winningMessage,setwinningMeessage]=useState("");
@@ -67,8 +69,7 @@ const App = () => {
       
     }
     const changeBoardClass=  ()=>{
-        const boardX = `${board} ${X_Class}`
-        const boardCircle = `${board} ${circle_Class}`
+        
         setboardClass(!classTrun ? boardCircle : boardX);
     }
     
